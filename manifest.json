@@ -1,0 +1,33 @@
+{
+  "include": [
+    "$(MODDABLE)/examples/manifest_base.json",
+    "$(MODDABLE)/examples/manifest_piu.json",
+		"$(MODDABLE)/examples/manifest_commodetto.json"
+  ],
+  "creation": {
+    "static": 65536,
+    "stack": 512
+  },
+  "modules": {
+    "*": [
+      "./main"
+    ]
+		,
+		"commodetto/readJPEG": "$(MODDABLE)/modules/commodetto/commodettoReadJPEG",
+		"commodetto/BufferOut": "$(MODDABLE)/modules/commodetto/commodettoBufferOut",
+		"commodetto/PixelsOut": "$(MODDABLE)/modules/commodetto/commodettoPixelsOut"
+  },
+  "preload": [
+  ],
+  "resources": {
+    "*-alpha": [
+      "$(MODDABLE)/examples/assets/fonts/OpenSans-Regular-16"
+    ],
+		"*": [	]
+  },
+  "config": {
+    "sntp": "pool.ntp.org",
+    "rotation": 90,
+    "periodInMs": 10000
+  }
+}
